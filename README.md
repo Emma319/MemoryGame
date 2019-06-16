@@ -9,8 +9,6 @@
 
 
 ## Instructions
-This is an Udacity Project.
-
 To initial a game, it calls *shuffle* function to create a list of sixteen random ordered cards. A event listener is set up for each card.
 If a card is clicked:
 * display the card's symbol
@@ -29,7 +27,7 @@ If a card is clicked:
 2. Click any two cards to open them. If two flipped cards have the same icon, they match and keep open. Otherwise, the cards close.
 3. Player should take as fewer moves as possiable to open all cards, then you will get a rating about the level of your menory based on how many moves and how much time you spend.
 
-Ready to Paly: [Go here](index.html)
+Ready to Paly: [Go here](https://emma319.github.io/MemoryGame/)
 
 
 ## Dependencies
@@ -37,4 +35,4 @@ This project uses open libraries like _bootstrap, font awesome, EasyTimer_ etc. 
 
 
 ## Contributing
-This repository is a practice project for **Udacity _Front-End Developer Program_**. Therefore, we most likely will not accept pull requests.
+This repository is a practice project for Udacity Front-End Developer Program.
