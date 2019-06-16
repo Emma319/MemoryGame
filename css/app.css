@@ -1,0 +1,234 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 350px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .countdown {
+    color: #02b3e4;
+    margin-left: 10px;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    transform: scaleX(-1);
+    transition: transform 0.2s;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: scaleX(1);
+    transition: transform 0.2s;
+    background: #02b3e4;
+    cursor: default;
+    font-size: 33px;
+}
+
+.deck .card.show {
+    pointer-events: none;
+}
+
+.deck .card.match {
+    animation: zoom 0.2s;
+    animation-iteration-count: 2;
+    background: #02ccba;
+    cursor: default;
+    font-size: 33px;
+}
+
+.deck .card.notmatch {
+    animation: shake 0.2s;
+    background: #f3a439;
+    cursor: default;
+    font-size: 33px;
+}
+
+/*
+ * Animation for match & non-match
+ * ref: https://www.w3schools.com
+ */
+
+@keyframes shake {
+    0% {transform: rotate(10deg);}
+    25% {transform: rotate(-10deg);}
+    50% {transform: rotate(5deg);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+}
+
+@keyframes zoom {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.04); }
+    50% { transform: scale(1.08); }
+    75% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+}
+
+
+/*
+ * Styles for the message Panel
+ */
+
+.message {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba63 0%, #aa7ecd8f 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    justify-content: center;
+    margin: 0 0 3em;
+}
+
+.comfirm,
+.win,
+.over {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-question,
+.fa-check,
+.fa-exclamation {
+    font-size: 50px;
+    color: #3d827c;
+}
+
+.yesBtn,
+.noBtn,
+.againBtn {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 2em;
+    padding: 0.5em;
+    border-radius: 10px;
+    background: #3b817b;
+}
+
+.display {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/*
+ * Styles adjustment for sceen size
+ */
+
+@media screen and (max-width: 660px) {
+    .deck,
+    .message {
+        width: 500px;
+        min-height: 500px;
+        padding: 20px;
+    }
+    .deck .card {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+    @media screen and (max-width: 400px) {
+    .deck,
+    .message {
+        width: 400px;
+        min-height: 400px;
+        padding: 20px;
+    }
+    .deck .card {
+        height: 75px;
+        width: 75px;
+    }
+}
